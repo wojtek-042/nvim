@@ -1,18 +1,74 @@
-### ThePrimeagen's init.lua
-Prerequisite: install [ripgrep](https://github.com/BurntSushi/ripgrep).
+<div align="center">
 
-[The full video of me setting up this repo](https://www.youtube.com/watch?v=w7i4amO_zaE)
+# Neovim Config
 
-For anyone that is interested in my vimrc, i will have a commit log below
-documenting each one of my commits (easy to C-f the change you want to know
-about though i would just suggest `git log -S`).
+Simple but featured. Focused on ergonomics, mnemonics and consistency.
 
-### Change Log
-* [33eee9ad](https://github.com/ThePrimeagen/init.lua/commit/33eee9ad0c035a92137d99dae06a2396be4c892e) initial commits
-* [cb210006](https://github.com/ThePrimeagen/init.lua/commit/cb210006356b4b613b71c345cb2b02eefa961fc0) netrw, autogroups for yank highlighting, and auto remove whitespace
-* [c8c0bf4a](https://github.com/ThePrimeagen/init.lua/commit/c8c0bf4aeacd0bd77136d9c5ee490680515a106b) zenmode.  i really like this plugin
-* [81c770d2](https://github.com/ThePrimeagen/init.lua/commit/81c770d2d2e32e59916b39c7f5babbc8560f7a82) copilot testing
-* [4a96e645](https://github.com/ThePrimeagen/init.lua/commit/4a96e6457b0a0241ca7361ce62177aa6b9a33a38) fugitive mappings for push and pull
-* [a3bad06a](https://github.com/ThePrimeagen/init.lua/commit/a3bad06a4681c322538d609aa1c0bd18880f77c6) disabled eslint.  driving me crazy
+Cherry pick the lines you need and totally understand.
 
+Always a WIP 🏗
 
+![nvim-demo](https://user-images.githubusercontent.com/11582667/220524725-08513f05-2190-49e1-8fba-2483896fd75f.png)
+  <sub>For the colorscheme, check [arctic.nvim](https://github.com/rockyzhang24/arctic.nvim). For more showcases, check [showcases](https://github.com/rockyzhang24/dotfiles/tree/master/.config/nvim#showcases) section below.</sub>
+
+</div>
+
+# ✨ Features
+
+* Beautiful colorscheme with my own [arctic.nvim](https://github.com/rockyzhang24/arctic.nvim)
+* Nvim builtin LSP client configured by [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+* Enhanced code formatting and linting with [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
+* Powerful auto-completion backed by [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+* Fuzzy finder for everything with [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+* Modern fold with [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo)
+* Better quickfix window with [nvim-bqf](https://github.com/kevinhwang91/nvim-bqf)
+* Fully Git integration with [vim-fugitive](https://github.com/tpope/vim-fugitive), [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim), [vim-flog](https://github.com/rbong/vim-flog), etc
+* Treesitter support [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+* Blazing fast statusline with [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
+* Better glance at search information with [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens)
+* Snippet engine with [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+* Smart code comment with [Comment.nvim](https://github.com/numToStr/Comment.nvim)
+* Undo history visualizer with [undotree](https://github.com/mbbill/undotree)
+* Indentation guide with [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+* Improved code search via [vim-grepper](https://github.com/mhinz/vim-grepper), [vim-asterisk](https://github.com/haya14busa/vim-asterisk), etc
+* Comprehensive text objects with [vim-after-object](https://github.com/junegunn/vim-after-object), [targets.vim](https://github.com/wellle/targets.vim), etc
+* Markdown preview with [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
+* ...
+
+To see all the plugins I am using 👉 [plugins](./.config/nvim/viml/plugins.vim)
+
+# 🚀 Key mappings
+
+I assign the key mappings rationally aiming to make them efficient and easy to remember.
+
+* Multiple leader keys
+
+  In addition to `<Space>` that is the general leader key, `<BS>` and `,` are set as the leader keys for toggling and LSP respectively.
+
+* Mnemonic
+
+  Key bindings are organized using mnemonic prefixes like `<Leader>b` for buffer, `<Leader>f` for fuzzy finder, `<Leader>w` for window, etc.
+  
+* Consistent
+
+  Similar functionalities have the same key binding throughout my dotfiles. For example, `,` and `.` for moving tabs in both kitty and Neovim.
+
+# 🎪 Showcases
+
+### Ultimate fold with [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo)
+
+Now the fold is asynchronous and powered by LSP with a customizable appearance for the folded line and peek window.
+
+https://user-images.githubusercontent.com/11582667/220818557-a136df65-aaa4-4742-908c-cf0a656df353.mp4
+
+### Enhanced quickfix window with [nvim-bqf](https://github.com/kevinhwang91/nvim-bqf)
+
+Equip the quickfix with a preview window and an interactive filter (backed by `fzf`), and introduce many convenient actions for quickfix
+
+https://user-images.githubusercontent.com/11582667/220798455-e5463890-8176-40c1-b27b-9210451eadd8.mp4
+
+### All-in-one Fuzzy Finder via [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+
+Fuzzy finder over lists of files, buffers, search results, git commits, etc.
+
+https://user-images.githubusercontent.com/11582667/220837891-f23ada38-c7d9-447f-a28b-e092d40b111b.mp4
