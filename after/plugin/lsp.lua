@@ -7,6 +7,7 @@ lsp.preset("recommended")
 lsp.ensure_installed({
   'tsserver',
   'rust_analyzer',
+  'eslint'
 })
 
 -- Configure LSP for lua-language-server to recognize 'vim' as a global
