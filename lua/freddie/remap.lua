@@ -4,6 +4,8 @@ vim.g.mapleader = " "
 -- Set a keymapping in normal mode for leader+pv to execute the Ex command
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+vim.keymap.set('n', '<leader>df', 'ggVGgq')
+
 -- Set a keymapping in visual mode for J to move the selection down one line and reselect
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
