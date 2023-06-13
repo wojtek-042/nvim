@@ -72,6 +72,7 @@ return require('packer').startup(function(use)
     use("tpope/vim-fugitive")
     use("nvim-treesitter/nvim-treesitter-context");
     use("lukas-reineke/indent-blankline.nvim")
+    use("mboughaba/i3config.vim")
 
     use {
         'VonHeikemen/lsp-zero.nvim',

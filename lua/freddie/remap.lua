@@ -6,6 +6,8 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set('n', '<leader>df', 'ggVGgq')
 
+vim.keymap.set('n', '<F8>', ':w <CR> :!gcc % -o %< && ./%< <CR>')
+
 -- Set a keymapping in visual mode for J to move the selection down one line and reselect
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
