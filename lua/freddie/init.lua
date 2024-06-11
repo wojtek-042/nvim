@@ -1,5 +1,6 @@
 require("freddie.set")
 require("freddie.remap")
+require("freddie.autosave")
 
 local augroup = vim.api.nvim_create_augroup
 local freddieGroup = augroup('freddie', {})
