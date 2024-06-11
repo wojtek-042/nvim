@@ -64,4 +64,7 @@ return require('packer').startup(function(use)
     use("github/copilot.vim")
     use("eandrju/cellular-automaton.nvim")
     use("laytan/cloak.nvim")
+
+    use("habamax/vim-asciidoctor")
+
 end)
