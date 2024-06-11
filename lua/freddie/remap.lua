@@ -4,6 +4,7 @@ vim.g.mapleader = " "
 -- Set a keymapping in normal mode for leader+pv to execute the Ex command
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- Workaround for basic formatting
 vim.keymap.set('n', '<leader>df', 'ggVGgq')
 
 vim.keymap.set('n', '<F8>', ':w <CR> :!gcc % -o %< && ./%< <CR>')
@@ -53,7 +54,6 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 -- Set a keymapping in normal mode for leader+f to format code with LSP
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
--- Sets key mappings for quickfix window navigation
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")     -- Jump to next error in quickfix list
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")     -- Jump to previous error in quickfix list
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz") -- Jump to next location list item
@@ -65,10 +65,11 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- Sets key mapping to add executable permission to the current file
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
--- Sets key mappings for loading specific files and running a command
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/freddie/packer.lua<CR>"); -- Open Packer configuration file
+-- Open Packer configuration file
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/freddie/packer.lua<CR>");
 
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");           -- Run "make_it_rain" command in current directory
+-- Run "make_it_rain" command in current directory
+vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 -- Sets key mapping to source the current file
 vim.keymap.set("n", "<leader><leader>", function()

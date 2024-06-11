@@ -8,8 +8,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        -- or                            , branch = '0.1.x',
+        'nvim-telescope/telescope.nvim', branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
@@ -66,13 +65,11 @@ return require('packer').startup(function(use)
     use("eandrju/cellular-automaton.nvim")
     use("laytan/cloak.nvim")
 
-    use {
-  "toppair/peek.nvim",
-  build = "deno task --quiet build:fast",
-  config = function()
-    require("peek").setup()
-    vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
-    vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
-  end,
+use {
+  "shuntaka9576/preview-asciidoc.vim",
+  dependencies = {
+    "vim-denops/denops.vim",
+  }
 }
+
 end)
