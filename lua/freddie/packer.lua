@@ -64,12 +64,4 @@ return require('packer').startup(function(use)
     use("github/copilot.vim")
     use("eandrju/cellular-automaton.nvim")
     use("laytan/cloak.nvim")
-
-use {
-  "shuntaka9576/preview-asciidoc.vim",
-  dependencies = {
-    "vim-denops/denops.vim",
-  }
-}
-
 end)

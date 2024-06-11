@@ -1,7 +1,7 @@
 -- Set map leader to space
 vim.g.mapleader = " "
 
--- Set a keymapping in normal mode for leader+pv to execute the Ex command
+-- for leader+pv to execute the Ex command
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- Workaround for basic formatting
@@ -9,49 +9,49 @@ vim.keymap.set('n', '<leader>df', 'ggVGgq')
 
 vim.keymap.set('n', '<F8>', ':w <CR> :!gcc % -o %< && ./%< <CR>')
 
--- Set a keymapping in visual mode for J to move the selection down one line and reselect
+-- for J to move the selection down one line and reselect
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
--- Set a keymapping in visual mode for K to move the selection up one line and reselect
+-- for K to move the selection up one line and reselect
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- Set a keymapping in normal mode for J to join the current line with the one below and reposition cursor
+-- for J to join the current line with the one below and reposition cursor
 vim.keymap.set("n", "J", "mzJ`z")
 
--- Set a keymapping in normal mode for Ctrl+d to scroll down half a screen and reposition cursor
+-- for Ctrl+d to scroll down half a screen and reposition cursor
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 
--- Set a keymapping in normal mode for Ctrl+u to scroll up half a screen and reposition cursor
+-- for Ctrl+u to scroll up half a screen and reposition cursor
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- Set a keymapping in normal mode for n to move to the next match, center the screen, and reselect
+-- for n to move to the next match, center the screen, and reselect
 vim.keymap.set("n", "n", "nzzzv")
 
--- Set a keymapping in normal mode for N to move to the previous match, center the screen, and reselect
+-- for N to move to the previous match, center the screen, and reselect
 vim.keymap.set("n", "N", "Nzzzv")
 
--- Set a keymapping in visual mode for leader+p to copy and replace the selected text
+-- for leader+p to copy and replace the selected text
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
--- Set a keymapping in normal and visual mode for leader+y to copy to system clipboard
+--  normal and  for leader+y to copy to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
--- Set a keymapping in normal mode for leader+Y to copy the entire buffer to system clipboard
+-- for leader+Y to copy the entire buffer to system clipboard
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
--- Set a keymapping in normal and visual mode for leader+d to delete selected text
+--  normal and  for leader+d to delete selected text
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
--- Set a keymapping in insert mode for Ctrl+c to exit insert mode
+--  insert mode for Ctrl+c to exit insert mode
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
--- Set a keymapping in normal mode for Q to do nothing
+-- for Q to do nothing
 vim.keymap.set("n", "Q", "<nop>")
 
--- Set a keymapping in normal mode for Ctrl+f to open a new Tmux window with tmux-sessionizer
+-- for Ctrl+f to open a new Tmux window with tmux-sessionizer
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
--- Set a keymapping in normal mode for leader+f to format code with LSP
+-- for leader+f to format code with LSP
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")     -- Jump to next error in quickfix list
