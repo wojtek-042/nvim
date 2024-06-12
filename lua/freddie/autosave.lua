@@ -1,25 +1,26 @@
 -- Define a global variable to track the autosave state
-_G.autosave_enabled = true
+_G.autosave_enabled = false
 
 -- Function to enable autosave
 local function enable_autosave()
-  vim.cmd([[
-    augroup autosave
-      autocmd!
-      autocmd FileType * autocmd TextChanged,InsertLeave,InsertEnter,CursorHoldI <buffer> if &readonly == 0 && &buftype == '' | silent write | endif
-    augroup END
-  ]])
+  vim.api.nvim_create_augroup("autosave", { clear = true })
+  vim.api.nvim_create_autocmd({"TextChanged", "InsertLeave", "InsertEnter", "CursorHoldI"}, {
+    group = "autosave",
+    pattern = "*",
+    callback = function()
+      if vim.bo.readonly == false and vim.bo.buftype == "" then
+        vim.cmd("silent! write")
+        print("Autosave complete")
+      end
+    end
+  })
   _G.autosave_enabled = true
   print("Autosave enabled")
 end
 
 -- Function to disable autosave
 local function disable_autosave()
-  vim.cmd([[
-    augroup autosave
-      autocmd!
-    augroup END
-  ]])
+  vim.api.nvim_del_augroup_by_name("autosave")
   _G.autosave_enabled = false
   print("Autosave disabled")
 end
@@ -36,9 +37,6 @@ end
 -- Command to toggle autosave
 vim.api.nvim_create_user_command('ToggleAutosave', toggle_autosave, {})
 
--- Keybinding to toggle autosave (e.g., <leader>s)
-vim.api.nvim_set_keymap('n', '<leader>s', ':ToggleAutosave<CR>', { noremap = true, silent = true })
-
--- Initially enable autosave
-enable_autosave()
+-- Keybinding to toggle autosave (e.g., <C-a>)
+vim.api.nvim_set_keymap('n', '<C-a>', ':ToggleAutosave<CR>', { noremap = true, silent = true })
 
